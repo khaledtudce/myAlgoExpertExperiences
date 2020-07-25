@@ -6,11 +6,27 @@ import java.util.Map;
 
 public class TwoNumberSums {
 	
-	//Time: O(n) || Space: O(n)
+	//Time: O(n^2) || Space: O(1)
 	public int[] twoNumberSum(int[] array, int targetSum) {
+		for (int i = 0; i < array.length; i++) {
+			for (int j = i+1; j < array.length; j++) {
+				if(i==j)
+					continue;
+				
+				if(array[i]+array[j]==targetSum)
+					return new int[] {array[j], array[i]};
+			}
+		}
+		
+		return new int[0];
+	}
+	
+	
+	//Time: O(n) || Space: O(logn)
+	public int[] twoNumberSum3(int[] array, int targetSum) {
 		Map<Integer, Boolean> map = new HashMap<Integer, Boolean>();
 		for (int i = 0; i < array.length; i++) {
-			int diff = targetSum-array[i];
+			int diff = targetSum - array[i];
 			if(map.containsKey(diff))
 				return new int[] {array[i], diff};
 			else
@@ -20,7 +36,22 @@ public class TwoNumberSums {
 	    return new int[0];
 	}
 	
-	//Time: O(nlogn) || Space: O(1)
+	//Time: O(n) || Space: O(n)
+	public int[] twoNumberSum1(int[] array, int targetSum) {
+	    Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+	    for (int i = 0; i < array.length; i++) 
+			map.put(array[i], i);
+		
+	    for (int i = 0; i < array.length; i++) {
+			int diff = targetSum - array[i];
+			if(map.containsKey(diff) && map.get(diff) != i)
+				return new int[] {diff, array[i]};
+		}
+		
+	    return new int[0];
+	}
+	
+	//Time: O(nlogn) || Space: O(n)
 	public int[] twoNumberSum2(int[] array, int targetSum) {
 	    Arrays.sort(array);
 	    int left=0, right=array.length-1;
@@ -37,18 +68,4 @@ public class TwoNumberSums {
 	    return new int[0];
 	}
 	
-	//Time: O(n) || Space: O(n)
-	public int[] twoNumberSum1(int[] array, int targetSum) {
-	    Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-	    for (int i = 0; i < array.length; i++) 
-			map.put(array[i], i);
-		
-	    for (int i = 0; i < array.length; i++) {
-			int diff = targetSum-array[i];
-			if(map.containsKey(diff) && map.get(diff)!=i)
-				return new int[] {diff, array[i]};
-		}
-		
-	    return new int[0];
-	}
 }
