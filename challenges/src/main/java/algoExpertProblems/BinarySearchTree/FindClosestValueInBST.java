@@ -23,12 +23,12 @@ public class FindClosestValueInBST {
 	public static int findClosestValueInBst1(BST tree, int target) {
 		BST curNode = tree;  
 		int lowestDist = Integer.MAX_VALUE;
-		int lowestDistNode = 0;
+		int lowestDiffNode = 0;
 		while(curNode!=null) {	
 			int curDist = Math.abs(target - curNode.value);
 			if(curDist<lowestDist) {
 				lowestDist = curDist;
-				lowestDistNode = curNode.value;
+				lowestDiffNode = curNode.value;
 			}	
 			if(target>curNode.value) {
 				curNode = curNode.right;
@@ -36,7 +36,7 @@ public class FindClosestValueInBST {
 				curNode = curNode.left;
 			}
 		}
-	    return lowestDistNode;
+	    return lowestDiffNode;
 	}
 
 	static class BST {
