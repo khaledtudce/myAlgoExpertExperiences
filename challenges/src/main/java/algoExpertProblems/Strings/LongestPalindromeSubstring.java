@@ -1,7 +1,6 @@
 package algoExpertProblems.Strings;
 
 public class LongestPalindromeSubstring {
-	// Hashmap was wrong solution, need to analyze why?
 	
 	// Time: O(n^2) || Space: O(1)
 	public String longestPalindromicSubstring1(String str) {
