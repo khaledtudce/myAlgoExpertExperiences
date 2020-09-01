@@ -1,6 +1,6 @@
 package famousAlgorithm;
 
-public class KadeneAlgorithm {
+public class KadaneAlgorithm {
 	
 	//Time: O(n) || Space: O(1)
 	public int kadanesAlgorithm(int[] array) {

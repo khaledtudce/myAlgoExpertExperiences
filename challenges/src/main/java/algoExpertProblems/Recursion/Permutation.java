@@ -55,13 +55,7 @@ public class Permutation {
 	}
 
 
-
 	
-	
-
-
-
-
 	// does not work
 	public List<List<Integer>> getPermutations1(List<Integer> array) {
 		List<List<Integer>> result = new ArrayList<List<Integer>>();

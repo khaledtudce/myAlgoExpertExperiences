@@ -48,7 +48,9 @@ public class Powerset {
 		return powersets;
 	}
 	
-	// Time: O(n^2*n!) || Space: O(n*n!)
+	
+	
+	// Time: O(n^2*n) || Space: O(n*n)
 	public static List<List<Integer>> powerset1(List<Integer> array) {
 		List<List<Integer>> powersets = new ArrayList<List<Integer>>();
 		getRecursivePowersets(array, powersets);
