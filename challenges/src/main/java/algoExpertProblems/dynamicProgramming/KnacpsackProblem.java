@@ -44,9 +44,9 @@ public class KnacpsackProblem {
 		return result;
 	}
 
-
-
-
+	
+	
+	// This did not worked
 	public List<List<Integer>> knapsackProblem1(int[][] items, int capacity) {
 		List<List<Integer>> result = new ArrayList<List<Integer>>();
 		if(capacity<=0) {
