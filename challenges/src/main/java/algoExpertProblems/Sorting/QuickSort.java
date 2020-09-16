@@ -1,7 +1,7 @@
 package algoExpertProblems.Sorting;
 
 public class QuickSort {
-	
+		
 	// Best O(nlogn) time | O(logn) space because of recursive call stack
 	// Average O(nlogn) time | O(logn) space
 	// Worst O(n^2) time | O(logn) space
@@ -25,8 +25,8 @@ public class QuickSort {
 				right--;
 		}
 		swap(pivot, right, array);
-		recursiveQuickSort(array, startIndex, right-1);
-		recursiveQuickSort(array, right+1, endIndex);
+		recursiveQuickSort(array, startIndex, right-1); // sort left side now
+		recursiveQuickSort(array, right+1, endIndex); // sort right side
 	}
 	
 	private void swap(int i, int j, int[] array) {
